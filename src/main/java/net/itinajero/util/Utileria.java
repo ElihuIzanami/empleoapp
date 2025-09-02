@@ -2,11 +2,12 @@ package net.itinajero.util;
 
 import java.io.File;
 import java.io.IOException;
+
 import org.springframework.web.multipart.MultipartFile;
 
 public class Utileria {
-	
-	public static String guardarArchivo(MultipartFile multiPart, String ruta) {  
+
+	public static String guardarArchivo(MultipartFile multiPart, String ruta) {
 		// Obtenemos el nombre original del archivo.
 		String nombreOriginal = multiPart.getOriginalFilename();
 		nombreOriginal = nombreOriginal.replace(" ", "-");
@@ -23,7 +24,7 @@ public class Utileria {
 			return null;
 		}
 	}
-	
+
 	/**
 	 * Metodo para generar una cadena aleatoria de longitud N
 	 * @param count
@@ -38,5 +39,5 @@ public class Utileria {
 		}
 		return builder.toString();
 	}
-	
+
 }

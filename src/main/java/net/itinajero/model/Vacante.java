@@ -1,6 +1,7 @@
 package net.itinajero.model;
 
 import java.util.Date;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,7 +9,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
 
 @Entity
 @Table(name="Vacantes")
@@ -79,8 +79,8 @@ public class Vacante {
 		this.destacado = destacado;
 	}
 
-	
-	
+
+
 	public String getImagen() {
 		return imagen;
 	}
@@ -88,8 +88,8 @@ public class Vacante {
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
-	
-	
+
+
 
 	public String getEstatus() {
 		return estatus;
@@ -106,8 +106,8 @@ public class Vacante {
 	public void setDetalles(String detalles) {
 		this.detalles = detalles;
 	}
-	
-	
+
+
 
 	public Categoria getCategoria() {
 		return categoria;
@@ -116,7 +116,7 @@ public class Vacante {
 	public void setCategoria(Categoria categoria) {
 		this.categoria = categoria;
 	}
-	
+
 	public void reset() {
 		this.imagen=null;
 	}

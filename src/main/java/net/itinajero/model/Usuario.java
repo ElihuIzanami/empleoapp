@@ -6,6 +6,7 @@ package net.itinajero.model;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -27,18 +28,18 @@ public class Usuario {
 	private String nombre;
 	private String email;
 	private String password;
-	private Integer estatus;	
+	private Integer estatus;
 	private Date fechaRegistro;
 	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(name="UsuarioPerfil",
 			   joinColumns = @JoinColumn(name="idUsuario"),
-			   inverseJoinColumns = @JoinColumn(name="idPerfil")			
+			   inverseJoinColumns = @JoinColumn(name="idPerfil")
 			)
 	private List<Perfil> perfiles;
-	
+
 	public void agregar(Perfil tempPerfil) {
 		if (perfiles == null) {
-			perfiles = new LinkedList<Perfil>();
+			perfiles = new LinkedList<>();
 		}
 		perfiles.add(tempPerfil);
 	}
@@ -98,7 +99,7 @@ public class Usuario {
 	public void setFechaRegistro(Date fechaRegistro) {
 		this.fechaRegistro = fechaRegistro;
 	}
-		
+
 
 	public List<Perfil> getPerfiles() {
 		return perfiles;
@@ -113,5 +114,5 @@ public class Usuario {
 		return "Usuario [id=" + id + ", username=" + username + ", nombre=" + nombre + ", email=" + email
 				+ ", password=" + password + ", estatus=" + estatus + ", fechaRegistro=" + fechaRegistro + "]";
 	}
-	
+
 }
